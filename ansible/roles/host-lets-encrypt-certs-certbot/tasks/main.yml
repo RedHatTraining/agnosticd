@@ -71,6 +71,7 @@
         - certbot-dns-{{ _certbot_dns_provider }}
     when: use_python3 | bool
 
+  # TODO: (jbirchler) Revisit JimR's change re: Modified workloads to do RPM installs with DNF
   - name: Copy certbot script
     become: True
     template:
