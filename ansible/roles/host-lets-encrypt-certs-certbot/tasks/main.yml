@@ -40,6 +40,7 @@
     path: "{{ _certbot_install_dir }}/fullchain.pem"
   register: cacert
 
+# TODO: (jbirchler) JimR needs to review the change here
 - name: No Certificates on host or _certbot_force_issue=true -> set up Let's Encrypt Certificates
   when:
     - cacert.stat.exists|bool == false or _certbot_force_issue|bool
@@ -59,6 +60,24 @@
         - certbot
         - certbot-dns-{{ _certbot_dns_provider }}
     when: not use_python3 | bool
+
+    # Certbot comes from a pinned EPEL repo
+    # in order for all prerequisites to be
+    # satisfied
+    # - name: Install certbot
+    #   become: True
+    #   yum:
+    #     state: present
+    #     name: certbot
+
+  - name: Copy certbot script
+    become: True
+    template:
+      src: ./templates/run-certbot.j2
+      dest: /usr/local/bin/run-certbot
+      owner: root
+      group: root
+      mode: 0755
 
   - name: Install certbot pip prerequisites in a virtualenv with python3
     become: True
@@ -115,8 +134,8 @@
     - "{{ _certbot_dir }}/config"
     - "{{ _certbot_dir }}/work"
     - "{{ _certbot_dir }}/logs"
-    - "{{ _certbot_dir }}/renewal-hooks"
-    - "{{ _certbot_dir }}/renewal-hooks/deploy"
+    #- "{{ _certbot_dir }}/renewal-hooks"
+    #- "{{ _certbot_dir }}/renewal-hooks/deploy"
 
   - name: Request Certificates from Let's Encrypt (force or no cache)
     when:
@@ -135,16 +154,15 @@
           certbot certonly -n --agree-tos --email {{ _certbot_le_email }}
           -d {{ _certbot_domain }}
           {{ (_certbot_wildcard_domain|length>0)|ternary('-d','')}} {{ (_certbot_wildcard_domain|length>0)|ternary(_certbot_wildcard_domain,'')}}
+          {{ (_certbot_production|bool)|ternary('','--test-cert') }}
+          {{ _certbot_additional_args|d(_certbot_args)|d('') }}
           {{ (_certbot_wildcard_certs|bool)|ternary('--dns-'+_certbot_dns_provider, '') }}
           --config-dir={{ _certbot_dir }}/config
           --work-dir={{ _certbot_dir }}/work
-          --logs-dir={{ _certbot_dir }}/logs
-          {{ (_certbot_production|bool)|ternary('','--test-cert') }}
-          {{ _certbot_additional_args|d(_certbot_args)|d('') }}
+          --logs-dir={{ _certbot_dir }}/logs          
 
     - name: Request API and Wildcard Certificates
-      # become: false
-      become_user: "{{ _certbot_user }} "
+      become: False
       command: /usr/local/bin/run-certbot
       retries: 5
       delay: 30
