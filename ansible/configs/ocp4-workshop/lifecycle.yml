@@ -67,7 +67,9 @@
         wait: true
         filters:
           "tag:guid": "{{ guid }}"
-          "tag:env_type": "{{ env_type }}"
+          instance-state-name: running
+          # TODO: uncomment this in a few weeks
+          #"tag:env_type": "{{ env_type }}"
 
     - name: Start instances by (guid, env_type) tags
       when: ACTION == 'start'
@@ -76,7 +78,9 @@
         wait: true
         filters:
           "tag:guid": "{{ guid }}"
-          "tag:env_type": "{{ env_type }}"
+          instance-state-name: stopped
+          # TODO: uncomment this in a few weeks
+          #"tag:env_type": "{{ env_type }}"
 
     - when: ACTION == 'status'
       block:
