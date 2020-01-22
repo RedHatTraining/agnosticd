@@ -11,3 +11,196 @@ This directory contains playbooks to provision, deploy, configure softwares. Eac
 * `destroy_env.yml`
 
 For more details see link:../main.yml[main.yml] and link:just-some-nodes-example[just-some-nodes-example].
+
+
+== Configuration Index
+
+
+Vanilla Configs
+|===
+|config| supported providers | comments
+
+| link:simple-example[]
+| AWS
+| A bastion and two worker nodes.
+
+| link:test-empty-config[]
+| 
+| Simply calls a series of playbooks.
+
+| link:three-tier-app[]
+| AWS
+| 5 unconfigured RHEL nodes, all internet exposes.
+
+| link:just-some-nodes-example[]
+| AWS, Azure
+| Vanilla nodes begging for something interesting to be done with them.
+
+| link:multi-region-example[]
+| AWS
+| Example of deploying into multiple regions.
+
+|===
+
+
+Ansible
+|===
+|config| supported providers | comments
+
+| link:ansible-cicd-lab[]
+| AWS
+| Ansible CI/CD Hackathon (for RHTE 2018 sessions).
+
+| link:ansible-integrations[]
+| AWS
+|
+
+
+| link:ansible-provisioner[]
+| AWS
+|
+
+| link:ansible-tower[]
+| AWS
+| Ansible tower and worker nodes
+
+| link:ansible-tower-implementation[]
+| AWS
+|
+
+| link:ansible-windows[]
+| AWS
+|
+
+| link:ans-network-lab[]
+| AWS
+|
+
+| link:ans-tower-lab[]
+| AWS
+| *Ansible Bootcamp ILT* aka *Ansible Advanced* labs.
+
+| link:ans-tower-ops-demo[]
+| AWS
+| similar to ans-tower-lab (?)
+
+| link:aro[]
+| Azure
+| Azure Red Hat OpenShift (aro) Standard Config
+
+| link:multi-region-tower[]
+| AWS
+| Deploy Ansible Tower into multpile regions.
+
+| link:rhte-ans-tower[]
+| AWS?
+|
+
+| link:rhte-oc-cluster-vms[]
+| AWS?
+|
+
+|===
+
+
+Openshift Container Platform Version 4
+|===
+|config| supported providers | comments
+
+| link:linklight[]
+| AWS
+| Example of existing deployr being wrapped by Ansible.
+
+| link:linklight-foundations[]
+| AWS
+|
+
+| link:ocp4-cluster[]
+| AWS
+| OCP 4 Disconnected Install Lab
+
+| link:ocp4-disconnected-osp-lab[]
+| AWS
+| OCP 4 Disconnected Install Lab
+
+| link:ocp4-ha-lab[]
+| AWS
+| OCP 4 HA Lab
+
+| link:ocp4-shared[]
+| AWS
+| Single OCP4 cluster to support multiple users
+
+| link:ocp4-workshop[]
+| AWS
+|
+
+|===
+
+
+Openshift Container Platform Version 3
+|===
+|config| supported providers | comments
+
+| link:ocp-clientvm[]
+| AWS
+|
+
+| link:ocp-gpu-single-node[]
+| AWS
+|
+
+| link:ocp-ha-disconnected-lab[]
+| AWS
+|
+
+| link:ocp-ha-lab[]
+| AWS
+|
+
+| link:ocp-implementation-lab[]
+| AWS
+|
+
+| link:ocp-storage-cns[]
+| AWS
+|
+
+| link:ocp-workloads[]
+| AWS
+|
+
+| link:ocp-workshop[]
+| AWS
+|
+
+| link:ocp-workshop-with-clientvms[]
+| AWS
+|
+
+| link:openshift-demos[]
+| AWS
+|
+
+| link:osp-migration[]
+| Openstack
+|
+
+
+|===
+
+
+Red Hat Satellite
+|===
+|config| supported providers | comments
+
+| link:satellite-multi-region[]
+| AWS
+| Satellite and Bastion, and multi region capsules.
+
+| link:satellite-vm[]
+| AWS
+| Satellite and Bastion vms.
+
+
+|===
