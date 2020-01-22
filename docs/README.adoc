@@ -7,7 +7,8 @@ Currently, Documents 2018, the documents are being revised and new documents are
 ====
 
 ====
-Brand new to agnosticD?  link:First_OSP_Env_walkthrough.adoc provides a good frist walkthrough.
+Brand new to agnosticD?  link:First_OSP_Env_walkthrough.adoc[] provides a good first walkthrough.
+====
 
 ===
 
