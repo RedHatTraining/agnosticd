@@ -6,6 +6,10 @@
 Currently, Documents 2018, the documents are being revised and new documents are in the process of being created.
 ====
 
+===
+Brand new to agnosticD and landed here?  A reasonable "hello world" execise would be to ...
+
+===
 
 [source,bash]
 ----
