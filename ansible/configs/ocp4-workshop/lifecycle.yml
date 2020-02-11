@@ -64,19 +64,22 @@
       when: ACTION == 'stop'
       ec2_instance:
         state: stopped
-        wait: no
+        wait: {{ aws_instance_wait_for_state }}
         filters:
           "tag:guid": "{{ guid }}"
-          "tag:env_type": "{{ env_type }}"
+          instance-state-name: running
+          # TODO: uncomment this in a few weeks
+          #"tag:env_type": "{{ env_type }}"
 
     - name: Start instances by (guid, env_type) tags
       when: ACTION == 'start'
       ec2_instance:
         state: started
-        wait: true
+        wait: {{ aws_instance_wait_for_state }}
         filters:
           "tag:guid": "{{ guid }}"
-          "tag:env_type": "{{ env_type }}"
+          # TODO: uncomment this in a few weeks
+          # "tag:env_type": "{{ env_type }}"
 
     - when: ACTION == 'status'
       block:
@@ -91,7 +94,7 @@
           template:
             dest: "{{ output_dir }}/status.txt"
             src: files/status.j2
-       
+
 - name: Run recover cluster actions
   hosts: localhost
   run_once: true
