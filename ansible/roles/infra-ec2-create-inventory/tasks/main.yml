@@ -45,10 +45,6 @@
     label: "{{item.tags.internaldns | default(item.private_dns_name)}}"
   ignore_errors: yes
 
-# - debug:
-#     var: "{{ item }}"
-#   with_items: "{{ec2_facts['instances']}}"
-
 - name: Add Linux hosts
   add_host:
     name: "{{item.tags.internaldns | default(item.private_dns_name)}}"
@@ -120,7 +116,7 @@
     placement: "{{item['placement']['availability_zone']}}"
     image_id: "{{item['image_id']}}"
     bastion: "{{ local_bastion | default('') }}"
-    ostype: "{{item.tags.ostype | default('windows') }}"
+    ostype: windows
     instance_name: "{{item.tags.instance_name | d('') }}"
   when:
     - item.state.name != 'terminated'
@@ -165,7 +161,7 @@
     placement: "{{item['placement']['availability_zone']}}"
     image_id: "{{item['image_id']}}"
     bastion: "{{ local_bastion | default('') }}"
-    ostype: "{{item.tags.ostype | default('windows') }}"
+    ostype: windows
     instance_name: "{{item.tags.instance_name | d('') }}"
   when:
     - item.state.name != 'terminated'
