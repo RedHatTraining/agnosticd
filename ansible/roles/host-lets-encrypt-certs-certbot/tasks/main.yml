@@ -11,7 +11,7 @@
       stat:
         path: "/home/{{ ansible_user }}/.aws/credentials"
       register: aws_credentials_result
-      
+
     - name: Fail if AWS Credentials are not on the host
       fail:
         msg: AWS Credentials are required when requesting certificates for a wildcard domain
@@ -21,7 +21,7 @@
   when: _certbot_dns_provider is match('rfc2136')
   block:
     - name: Verify credential are present on host
-      when: _certbot_dns_provider is match('rfc2136') 
+      when: _certbot_dns_provider is match('rfc2136')
       stat:
         path: /home/{{ _certbot_user }}/.rfc2136.ini
       register: ddns_credentials_result
@@ -32,7 +32,7 @@
       when: ddns_credentials_result.stat.exists == False
 
 - name: Set _certbot_wildcard_certs fact
-  set_fact: 
+  set_fact:
     _certbot_wildcard_certs: "{{ (_certbot_wildcard_domain|length|int>0)|ternary('true','false') }}"
 
 - name: Test if Let's Encrypt Certificates are already there
@@ -60,12 +60,12 @@
     become: True
     become_user: "{{ _certbot_user }}"
     command: "/usr/local/bin/virtualenv -p /usr/bin/python3 {{ _certbot_virtualenv }}"
-  
+
   - name: Install Certbot into Virtualenv
     become: true
     become_user: "{{ _certbot_user }}"
     command: "{{ _certbot_virtualenv }}/bin/pip3 install -r /tmp/requirements_certbot.txt"
-  
+
   - name: Copy certbot script to virtualenv
     template:
       src: ./templates/run-certbot.j2
@@ -107,8 +107,8 @@
     - "{{ _certbot_dir }}/config"
     - "{{ _certbot_dir }}/work"
     - "{{ _certbot_dir }}/logs"
-    - "{{ _certbot_dir }}/renewal-hooks"
-    - "{{ _certbot_dir }}/renewal-hooks/deploy"
+    #- "{{ _certbot_dir }}/renewal-hooks"
+    #- "{{ _certbot_dir }}/renewal-hooks/deploy"
 
   - name: Request Certificates from Let's Encrypt (force or no cache)
     when:
@@ -127,12 +127,12 @@
           certbot certonly -n --agree-tos --email {{ _certbot_le_email }}
           -d {{ _certbot_domain }}
           {{ (_certbot_wildcard_domain|length>0)|ternary('-d','')}} {{ (_certbot_wildcard_domain|length>0)|ternary(_certbot_wildcard_domain,'')}}
+          {{ (_certbot_production|bool)|ternary('','--test-cert') }}
+          {{ _certbot_additional_args|d(_certbot_args)|d('') }}
           {{ (_certbot_wildcard_certs|bool)|ternary('--dns-'+_certbot_dns_provider, '') }}
           --config-dir={{ _certbot_dir }}/config
           --work-dir={{ _certbot_dir }}/work
           --logs-dir={{ _certbot_dir }}/logs
-          {{ (_certbot_production|bool)|ternary('','--test-cert') }}
-          {{ _certbot_additional_args|d(_certbot_args)|d('') }}
 
     - name: Request API and Wildcard Certificates
       # become: false
