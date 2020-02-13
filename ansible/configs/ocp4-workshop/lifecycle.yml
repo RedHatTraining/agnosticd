@@ -64,22 +64,20 @@
       when: ACTION == 'stop'
       ec2_instance:
         state: stopped
-        wait: {{ aws_instance_wait_for_state }}
+        wait: {{ aws_instance_wait_for_stop }}
         filters:
           "tag:guid": "{{ guid }}"
+          "tag:env_type": "{{ env_type }}"
           instance-state-name: running
-          # TODO: uncomment this in a few weeks
-          #"tag:env_type": "{{ env_type }}"
 
     - name: Start instances by (guid, env_type) tags
       when: ACTION == 'start'
       ec2_instance:
         state: started
-        wait: {{ aws_instance_wait_for_state }}
+        wait: true
         filters:
           "tag:guid": "{{ guid }}"
-          # TODO: uncomment this in a few weeks
-          # "tag:env_type": "{{ env_type }}"
+          "tag:env_type": "{{ env_type }}"
 
     - when: ACTION == 'status'
       block:
