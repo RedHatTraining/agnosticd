@@ -47,7 +47,7 @@
       server: gunicorn
       module: wsgi
       pip_requirements: requirements.txt
-- name: Fixups for python virutal env created by Stouts
+- name: Fixups for python virtual env created by Stouts
   shell: |
     source /opt/status/env/bin/activate
     chown -R ec2-user:ec2-user /opt/status/env
