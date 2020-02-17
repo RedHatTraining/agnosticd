@@ -11,7 +11,6 @@
   tags: include_vars
   tasks:
     - name: Stat default variables files (both yaml/yml extensions)
-      delegate_to: localhost
       vars:
         find_me:
           # Global default vars related to the cloud provider
@@ -34,7 +33,6 @@
       register: rstat_varfiles
 
     - name: Stat variables files
-      delegate_to: localhost
       vars:
         find_me:
           # secret file path passed as extra-var
