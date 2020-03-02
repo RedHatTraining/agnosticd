@@ -1,18 +1,40 @@
 ---
+- name: Clone private workloads
+  hosts: localhost
+  gather_facts: false
+  run_once: true
+  become: false
+  tasks:
+    - name: Create and pull repo
+      shell: |
+        source_path=/tmp/{{ item.name }}-private-workload
+        workload_path=$(pwd)/../../roles/{{ item.name }}-private-workload
+        
+        mkdir -p $source_path && cd $source_path
+
+        git init
+        git remote add origin {{ item.url }}
+
+        git config core.sparseCheckout true
+        echo "{{ item.path }}" >> .git/info/sparse-checkout
+
+        git pull --depth=1 origin master
+
+        ln -s $source_path/{{ item.path }} $workload_path 
+
+        exit 0
+      loop: "{{ private_workloads }}"
+
 - name: Install workloads
   hosts: bastions
   gather_facts: false
   run_once: true
   become: false
-
   tasks:
     - name: Include private workloads
       include_role:
-        name: "{{ item.tmp }}"
+        name: "{{ item.name }}-private-workload"
       vars:
         ACTION:                  "provision"
         workload_name:           "{{ item.name }}"
-        workload_git_url:        "{{ item.url }}"
-        workload_git_path:       "{{ item.path }}"
-        workload_ssh_key:        "{{ item.ssh_key }}"
       loop: "{{ private_workloads }}"
