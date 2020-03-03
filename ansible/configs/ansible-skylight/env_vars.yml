@@ -10,7 +10,7 @@
 # - name: workload-name
 #   url: ssh://github.com:foo/bar.git
 #   path: /classroom/infrastructure/agnosticd-workload
-#   ssh_key: /home/provisioner/github-private.key
+#   git_ssh_key: /home/provisioner/github-private.key
 private_workloads: []
 
 ### Common Host settings

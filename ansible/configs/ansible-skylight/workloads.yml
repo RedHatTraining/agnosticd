@@ -38,7 +38,7 @@
       vars:
         ACTION:         "provision"
         workload_name:  "{{ item.name }}"
-        github_ssh_key: "{{ item.ssh_key }}"
+        git_ssh_key:    "{{ item.git_ssh_key }}"
       loop: "{{ private_workloads }}"
 
 - name: Cleanup private workloads
