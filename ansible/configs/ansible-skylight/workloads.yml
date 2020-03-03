@@ -4,6 +4,8 @@
   gather_facts: false
   run_once: true
   become: false
+  pre_tasks:
+    - include: workloads_cleanup.yml
   tasks:
     - name: Create and pull repo
       shell: |
@@ -17,12 +19,11 @@
 
         git config core.sparseCheckout true
         echo "{{ item.path }}" >> .git/info/sparse-checkout
+        git config core.sshCommand "ssh -i {{ item.ssh_key }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
         git pull --depth=1 origin master
 
         ln -s $source_path/{{ item.path }} $workload_path 
-
-        exit 0
       loop: "{{ private_workloads }}"
 
 - name: Install workloads
@@ -35,6 +36,15 @@
       include_role:
         name: "{{ item.name }}-private-workload"
       vars:
-        ACTION:                  "provision"
-        workload_name:           "{{ item.name }}"
+        ACTION:         "provision"
+        workload_name:  "{{ item.name }}"
+        github_ssh_key: "{{ item.ssh_key }}"
       loop: "{{ private_workloads }}"
+
+- name: Cleanup private workloads
+  hosts: localhost
+  gather_facts: false
+  run_once: true
+  become: false
+  tasks:
+    - include: workloads_cleanup.yml

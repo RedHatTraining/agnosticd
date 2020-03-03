@@ -4,7 +4,9 @@
 
 ## Indicate the list of private workloads to deploy with
 # this config. Takes a list of remote workloads as parameter
-# private_workloads:
+# private_workloads.
+# Name will be used as part of a path name, so avoid spaces and
+# other non-alphanumeric characters.
 # - name: workload-name
 #   url: ssh://github.com:foo/bar.git
 #   path: /classroom/infrastructure/agnosticd-workload
