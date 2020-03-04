@@ -109,6 +109,7 @@ aws_ami_region_mapping:
   ap-south-1:
     RHEL81GOLD: ami-02e080ed69a76b2b0 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0fb14ee64b7f3ec5f # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    RHEL76GOLD: ami-0656c5f7881490f7a # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-0c6ec6988a8df3acc # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-952879fa # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-06b5b777e3e44349e # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -119,6 +120,11 @@ aws_ami_region_mapping:
   eu-west-3:
     RHEL81GOLD: ami-0a5203efd0d47d6f7 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0bdbd51afecffe769 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-07801cfecc7f98c62 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-0a6207e27499906a8 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-0eaa149ab59c62744 # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-0984d468a269f8732 # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-0a74212566be8f9e2 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-0a0167e3e2a1d1d9b # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-69d06614 # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-07882d86edcb79e90 # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -129,6 +135,11 @@ aws_ami_region_mapping:
   eu-west-2:
     RHEL81GOLD: ami-083006344a5d1d206 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-032a151c5ec1cece8 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-00c96804ea5335976 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-02287d4f5bb0057ed # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-0318ac06bf1dafecf # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-0983860d1168702bb # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-051fb39c3a16c8a85 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-01f010afd559615b9 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-55bca731 # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-014aa36438fd9a1f9 # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -139,6 +150,11 @@ aws_ami_region_mapping:
   eu-west-1:
     RHEL81GOLD: ami-0de312f3226dd2820 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0d877afcbc388497f # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-0bade2c000fffeb25 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-01f0765e60ddc2030 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-039959b22f8126519 # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-0ea7295f82e08ffa2 # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-02a1dcbcc4f50bdb9 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-0c51cd02617947143 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-b7b6d3ce # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-0534d3148e3ce93d7 # RHEL-8.1.0_HVM-20191029-x86_64-0-Hourly2-GP2
@@ -149,6 +165,11 @@ aws_ami_region_mapping:
   ap-northeast-2:
     RHEL81GOLD: ami-02c4c38a3740d462b # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0d98ba73652f180ea # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-094cee0d1d07decc3 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-0e484c84e6d59f3a3 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-056f1f694fb338b9a # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-0f26101934dec146b # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-0983c35dbbdd0f69e # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-031161cd3182e012a # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-9fa201f1 # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-06858f111b26784e7 # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -159,6 +180,11 @@ aws_ami_region_mapping:
   ap-northeast-1:
     RHEL81GOLD: ami-0b7b06f79c39e9dfc # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0f273695c45b7e367 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-0d22937ab6596feb9 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-0ca8f1ccdb6072b95 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-0ad7df08f5dd46b4b # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-03adb46596424ffae # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-0b1fa7354371d3331 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-0bf9ecb88f5719e17 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-ccf695aa # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-08471dfdb9a833c1f # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -170,6 +196,12 @@ aws_ami_region_mapping:
     RHEL81GOLD: ami-0730064f7889c0036 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0294f6385758777e1 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
     RHEL75GOLD: ami-0a419d7f7b8b07b64 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
+    WIN2016CORE: ami-09dee14d93d098bef # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-0c35722264774a959 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-0267f1de54f0e78db # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-02c8625672a43c5e0 # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-06addb952810f166b # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
+    RHEL75GOLD: ami-93b693ff # RHEL-7.5_HVM_GA-JBEAP-7.1.2-20180629-x86_64-1-Access2-GP2
     RHEL74GOLD: ami-dc014db0 # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-01baef9c6ac55fc58 # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
     RHEL75: ami-01c56172f9db84834 # RHEL-7.5_HVM-20180813-x86_64-0-Hourly2-GP2
@@ -179,6 +211,11 @@ aws_ami_region_mapping:
   ca-central-1:
     RHEL81GOLD: ami-01cad76f99f5438e5 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-03032a0742c22a056 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-0c3ad262e069dfc24 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-00aad975eff1d9a01 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-0c1564a8ee6d8b672 # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-0ace3320f5f88d40b # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-0ed2e023e005c9178 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-e320ad87 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-2a00854e # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-0a45f50cee93a0284 # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -189,6 +226,11 @@ aws_ami_region_mapping:
   ap-southeast-1:
     RHEL81GOLD: ami-000979d0952e1ea3a # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0d9e62f68aaf879c4 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-09fc1742a461ffd07 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-0fcebaeb4fd311763 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-0f1023ca49ae0d93c # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-088f331a37b8d92cb # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-070467cd1ef12f289 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-0f44e46fa59e902b6 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-8193eafd # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-053b211db8dde2a7e # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -199,6 +241,11 @@ aws_ami_region_mapping:
   ap-southeast-2:
     RHEL81GOLD: ami-0ac4af3b786e7f8f4 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-04ea460dafde8f1c7 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-0b62470a378ad69fd # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-02f8bb5d22d8a6f45 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-05efde37dd7eb1c58 # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-042d0d60c5d93a987 # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-0499d01ff89fea5e6 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-0066ef2f9c72fad96 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-dd9668bf # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-0e3696cc3d156dd22 # RHEL-8.1.0_HVM-20191029-x86_64-0-Hourly2-GP2
@@ -209,6 +256,11 @@ aws_ami_region_mapping:
   eu-central-1:
     RHEL81GOLD: ami-08c04369895785ac4 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-04a404842b13c6d1b # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-030bb37dde91b23b0 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-076acf0f99b739999 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-01fa3f6880480f030 # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-0d740b96c9b6cc5a7 # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-012838bc227c83b03 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-07d3f0705bebac978 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-b3d841dc # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-03bc95cbfec5910cf # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -219,6 +271,11 @@ aws_ami_region_mapping:
   us-east-1:
     RHEL81GOLD: ami-002cdac160d085b42 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0eb2f2e81d5802f98 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-0c47a41445086e9a5 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-0cbf1b1038bbb408d # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-0121a74b47349b8e1 # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-0ab54e065e88f7520 # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-0f83261cb7d041a1b #RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-0456c465f72bd0c95 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-c5a094bf # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-09b947b170ccd0dbc # RHEL-8.1.0_HVM-20191029-x86_64-0-Hourly2-GP2
@@ -229,6 +286,11 @@ aws_ami_region_mapping:
   us-east-2:
     RHEL81GOLD: ami-0d31ffafc92cb1a4a # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0a2af046b8ba7bb31 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-07b05dc41044e4f5a # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-02daaf23b3890d162 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-058b40ff697168d0b # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-09f2114fecbe506e2 # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-0bdf2c4eae6c71d2b # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-04268981d7c33264d # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-9db09af8 # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-09e10245c18bb3fdb # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -239,6 +301,11 @@ aws_ami_region_mapping:
   us-west-1:
     RHEL81GOLD: ami-026b61c4d215f1956 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0da8de134b84f0f3f # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-069a40d6cf4794175 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-0833104f83deab338 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-09b53b7a821b0b584 # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-0182e552fba672768 # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-00ef21b27071fe235 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-02574210e91c38419 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-6f030e0f # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-0f1585b15207b3855 # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -249,6 +316,11 @@ aws_ami_region_mapping:
   us-west-2:
     RHEL81GOLD: ami-03813ca3adad990e0 # RHEL-8.1.0_HVM-20191029-x86_64-0-Access2-GP2
     RHEL77GOLD: ami-0b7630e8f95462671 # RHEL-7.7_HVM-20191119-x86_64-2-Access2-GP2
+    WIN2016CORE: ami-034722ebb02a27ed9 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-08dc1ca51e27079b0 # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-00507dd4f8c48d022 # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-089f7b5c2b6954184 # Windows_Server-2019-English-Full-Base-2020.01.15
+    RHEL76GOLD: ami-0fae471393c00f216 # RHEL-7.6_HVM-20190618-x86_64-0-Access2-GP2
     RHEL75GOLD: ami-0e6bab6682ec471c0 # RHEL-7.5_HVM-20180813-x86_64-0-Access2-GP2
     RHEL74GOLD: ami-c405b8bc # RHEL-7.4_HVM-20180122-x86_64-1-Access2-GP2
     RHEL81: ami-0fd5b776e0a6e2ae2 # RHEL-8.1.0_HVM-20191029-arm64-0-Hourly2-GP2
@@ -256,3 +328,7 @@ aws_ami_region_mapping:
     RHEL74: ami-1607ba6e # RHEL-7.4_HVM-20180122-x86_64-1-Hourly2-GP2
     WIN2012R2: ami-0f8967b5f815400c0 # Windows_Server-2012-R2_RTM-English-64Bit-Base-2020.02.12
     WIN2019: ami-0d7d80db021ba0d11 # Windows_Server-2019-English-Full-Base-2020.02.12
+    WIN2016CORE: ami-0e39aacb0d74920e6 # Windows_Server-2016-English-Core-Base-2020.01.15
+    WIN2016FULL: ami-09e71fb1baf16d0cd # Windows_Server-2016-English-Full-Base-2020.01.15
+    WIN2019CORE: ami-09bd4cfdc912b5239 # Windows_Server-2019-English-Core-Base-2020.01.15
+    WIN2019FULL: ami-0a1d405ce719bebfd # Windows_Server-2019-English-Full-Base-2020.01.15

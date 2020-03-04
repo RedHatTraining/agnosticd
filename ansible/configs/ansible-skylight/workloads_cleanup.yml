@@ -1,0 +1,12 @@
+---
+- name: Remove source repository
+  file:
+    path: "/tmp/{{ item.name }}-private-workload"
+    state: absent
+  loop: "{{ private_workloads }}"
+
+- name: Remove workload symlink
+  file:
+    path: "../../roles/{{ item.name }}-private-workload"
+    state: absent
+  loop: "{{ private_workloads }}"
