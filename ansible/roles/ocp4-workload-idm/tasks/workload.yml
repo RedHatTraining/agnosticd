@@ -41,32 +41,41 @@
 
 - name: Install CAs
   shell: |
-    echo {{ idm_admin_password }} | kinit admin
-    ipa-cacert-manage -p {{ idm_dm_password }} install /tmp/DSTRootCAX3.pem -n DSTRootCAX3 -t C,,
-    ipa-cacert-manage -p {{ idm_dm_password }} install /tmp/LEAuthX3.pem -n LEAuthX3 -t C,,
+    echo '{{ idm_admin_password }}' | kinit admin
+    ipa-cacert-manage -p '{{ idm_dm_password }}' install /tmp/DSTRootCAX3.pem -n DSTRootCAX3 -t C,,
+    ipa-cacert-manage -p '{{ idm_dm_password }}' install /tmp/LEAuthX3.pem -n LEAuthX3 -t C,,
     ipa-certupdate -v
   become: True
 
 - name: Install IPA Certificate
   shell: |
-    ipa-server-certinstall -w -d /home/{{ ansible_user }}/idm/certificates/privkey.pem /home/{{ ansible_user }}/idm/certificates/fullchain.pem -p {{ idm_dm_password }} --pin=''
+    ipa-server-certinstall -w -d /home/{{ ansible_user }}/idm/certificates/privkey.pem /home/{{ ansible_user }}/idm/certificates/fullchain.pem -p '{{ idm_dm_password }}' --pin=''
     ipactl restart
   become: True
 
 - name: Install redeploy hook scripts
   template:
     src: ./files/deploy_certs.sh
-    dest: "/home/{{ ansible_user }}/idm/certbot/renewal-hooks/deploy/deploy_certs.sh"
+    dest: "/home/{{ ansible_user }}/idm/certbot/config/renewal-hooks/deploy/deploy_certs.sh"
     mode: 0775
     owner: "{{ ansible_user }}"
 - name: Install redeploy hook ansible components
   copy:
     src: "./files/{{ item }}"
-    dest: "/home/{{ ansible_user }}/idm/certbot/renewal-hooks/deploy/{{ item }}"
+    dest: "/home/{{ ansible_user }}/idm/certbot/config/renewal-hooks/deploy/{{ item }}"
     mode: 0664
     owner: "{{ ansible_user }}"
   loop:
   - deploy_certs.yml
+
+- name: Install AWS python prerequisites
+  become: True
+  pip:
+    state: present
+    name:
+    - boto
+    - botocore
+    - boto3
 
 # Find public IP of bastion
 - name: Gather VPC facts
