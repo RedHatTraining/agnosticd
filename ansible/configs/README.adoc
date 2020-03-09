@@ -15,6 +15,9 @@ For more details see link:../main.yml[main.yml] and link:just-some-nodes-example
 
 == Configuration Index
 
+This index was developed by an AgnosticD noob trying to get his
+head around the various configs.  People who know better should feel free to
+make updates.
 
 === Vanilla Configs
 
@@ -30,8 +33,9 @@ For more details see link:../main.yml[main.yml] and link:just-some-nodes-example
 | Simply calls a series of playbooks.
 
 | link:three-tier-app[]
-| AWS
-| 5 unconfigured RHEL nodes, all internet exposes.
+| AWS,OSP
+| 5 unconfigured RHEL nodes, all internet exposed.  Simple 
+  and actively maintained, this is likely a good starting point.
 
 | link:just-some-nodes-example[]
 | AWS, Azure
