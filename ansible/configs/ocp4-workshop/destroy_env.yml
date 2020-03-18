@@ -145,6 +145,9 @@
   run_once: true
   become: false
   tasks:
+  - name: Set Ansible Python interpreter to k8s virtualenv
+    set_fact:
+      ansible_python_interpreter: /opt/virtualenvs/k8s/bin/python
   - name: Remove ocp workloads
     when:
     - remove_workloads | d("") | length > 0
@@ -348,10 +351,11 @@
         aws route53 list-hosted-zones-by-name
         --dns-name {{ aws_public_zone }}
         --max-items 4
+        --output json
       register: awsroute53zone
       changed_when: false
       retries: 5
-      delay: "{{ 60|random(start=3, step=1) }}"
+      delay: "{{ 60|random(start=10, step=1) }}"
       until: awsroute53zone is succeeded
 
     - name: delete zones

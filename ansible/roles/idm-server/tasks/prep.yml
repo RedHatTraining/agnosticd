@@ -1,14 +1,23 @@
 ---
-
 - name: Install required packages
-  package:
-    name: "{{ idm_rpms }}"
-    state: installed
+  # FIXME:
+  # Using the 'package' module fails when installing
+  # Unable to find yum & rpm python package on RHEL 7.5
+  #
+  # Error:
+  # The Python 32 bindings for rpm are needed for this module. If you require
+  # Python 3 support use the `dnf` Ansible module instead.. The Python 2 yum
+  # module is needed for this module. If you require Python 3 support use the
+  # `dnf` Ansible module instead.
+  # package
+  #
+  # To fix that error, we can install the bastion using a RHEL 8 image
+  command:
+    yum -y install {{ idm_rpms | join(" ") }}
 
 - name: Upgrade NSS package
-  package:
-    name: nss
-    state: latest
+  command:
+    yum -y update nss
 
 # Cannot use a handler here
 - name: Ensure firewalld is running
@@ -17,12 +26,12 @@
     state: started
     enabled: yes
 
+# The 'firewalld' module is not compatible with Python 3 on RHEL 7
+# This has to do with missing python 3 bindings for firewalld
 - name: Open Firewall for IdM use
-  firewalld:
-    service: "{{ item }}"
-    permanent: yes
-    state: enabled
-    immediate: yes
+  shell: |
+    firewall-cmd --permanent --zone=public --add-service={{ item }}
+    firewall-cmd --reload
   with_items:
   - ntp
   - http
